@@ -40,7 +40,7 @@ const Navbar = () => {
     <nav className="main-navbar">
       <div className="nav-logo">
         <img src={logoIcon} alt="logo" className="logo-img" />
-        <h2>Online Tuition</h2>
+        <h2>ONLINE TUITION</h2>
       </div>
 
       <div
