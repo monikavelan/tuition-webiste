@@ -1,0 +1,132 @@
+/* Base Styling */
+* {
+  box-sizing: border-box;
+}
+
+/* .login-page {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+} */
+
+.login-page {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* ✅ Animation */
+  animation: fadeInSlideUp 0.6s ease-out;
+}
+
+.login-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Role Tabs */
+.role-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.role-tabs button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.role-tabs button.active {
+  background-color: #ff857A;
+  color: white;
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 12px;
+  width: 100%;
+  background-color: #ff857A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #e86c63;
+}
+
+/* === Responsive Styling === */
+@media (max-width: 500px) {
+  .login-page {
+    margin: 30px 16px;
+    padding: 20px 16px;
+  }
+
+  .login-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .role-tabs {
+    gap: 8px;
+  }
+
+  .role-tabs button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .login-form input {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .login-form button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

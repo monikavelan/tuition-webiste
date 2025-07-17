@@ -1,0 +1,131 @@
+/* .register-form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+} */
+
+.register-form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+
+  /* ✅ Add this line */
+  animation: fadeInSlideUp 0.6s ease-out;
+}
+
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.7rem;
+  color: #222;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.register-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form input,
+.register-form select {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #ff857A;
+  outline: none;
+}
+
+.register-form button {
+  background-color: #ff857A;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: #e16c63;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.name-fields input {
+  flex: 1 1 30%;
+  min-width: 100px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #ff857A;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .register-form {
+    margin: 30px 16px;
+    padding: 25px 20px;
+     animation: fadeInSlideUp 0.6s ease-out;
+  }
+
+  .register-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .name-fields {
+    flex-direction: column;
+  }
+
+  .name-fields input {
+    width: 100%;
+  }
+
+  .register-form input,
+  .register-form select,
+  .register-form button {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

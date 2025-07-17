@@ -1,0 +1,157 @@
+.query-page {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: auto;
+}
+
+.query-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.query-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.query-form select,
+.query-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.query-form button {
+  padding: 10px 16px;
+  background-color: #ff857a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.query-form button:hover {
+  background-color: #e15d54;
+}
+
+.query-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.query-card {
+  background: #fff;
+  padding: 20px;
+  border-left: 6px solid #ff857a;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.query-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.reply-input textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  resize: vertical;
+}
+
+.reply-input button {
+  background-color: #ff857a;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reply-input button:hover {
+  background-color: #e15d54;
+}
+
+.solved {
+  color: #207f47;
+  font-weight: bold;
+}
+
+.query-card.solved {
+  border-left-color: #27ae60;
+  background-color: #eafaf1;
+}
+
+.query-card.solved .status-tag {
+  color: #207f47;
+}
+
+/* ========== MOBILE + TABLET RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+  .query-page {
+    padding: 24px 16px;
+  }
+
+  .query-page h2 {
+    font-size: 1.75rem;
+  }
+
+  .query-form button {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  .reply-input textarea {
+    font-size: 0.95rem;
+  }
+
+  .query-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .query-page {
+    padding: 20px 12px;
+  }
+
+  .query-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .query-form select,
+  .query-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .query-form button {
+    width: 100%;
+  }
+
+  .query-card p {
+    font-size: 0.95rem;
+  }
+
+  .reply-input textarea {
+    height: 70px;
+    font-size: 0.9rem;
+  }
+
+  .reply-input button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,101 @@
+.manage-payments-page {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.manage-payments-page h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ========= Desktop Table View ========= */
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.payments-table th,
+.payments-table td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.payments-table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.status-paid {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #d35400;
+  font-weight: bold;
+}
+
+.total-revenue {
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #222;
+}
+
+/* ========= Mobile View (Stacked Cards) ========= */
+@media (max-width: 768px) {
+  .payments-table,
+  .payments-table thead,
+  .payments-table tbody,
+  .payments-table th,
+  .payments-table td,
+  .payments-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .payments-table thead {
+    display: none;
+  }
+
+  .payments-table tr {
+    background-color: #fff;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    padding: 12px;
+  }
+
+  .payments-table td {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .payments-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555;
+  }
+
+  .payments-table td:last-child {
+    border-bottom: none;
+  }
+
+  .total-revenue {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}

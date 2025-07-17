@@ -1,0 +1,133 @@
+.manage-subjects-page {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.manage-subjects-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* === Form Styling === */
+.subject-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.subject-form input,
+.subject-form select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  flex: 1 1 200px;
+  box-sizing: border-box;
+}
+
+.subject-form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* === Subject List Table (Desktop) === */
+.subject-list h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #444;
+  text-align: center;
+}
+
+.subject-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.subject-list th,
+.subject-list td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.subject-list th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+/* === Mobile View (Card-Based) === */
+@media (max-width: 768px) {
+  .subject-form input,
+  .subject-form select,
+  .subject-form button {
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+  }
+
+  .subject-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .subject-list table,
+  .subject-list thead,
+  .subject-list tbody,
+  .subject-list th,
+  .subject-list td,
+  .subject-list tr {
+    display: block;
+    width: 100%;
+  }
+
+  .subject-list thead {
+    display: none;
+  }
+
+  .subject-list tr {
+    background-color: #fff;
+    margin-bottom: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .subject-list td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .subject-list td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+  }
+
+  .subject-list td:last-child {
+    border-bottom: none;
+  }
+}
+
+ .subject-form input::placeholder {
+    font-size: 0.95rem;
+    color: #999;
+  }
