@@ -31,19 +31,23 @@ const AdminRegister = () => {
   };
 
   return (
-    <div className="register-form">
-      <h2>Admin Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="instituteName" placeholder="Institute Name" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Admin Email" onChange={handleChange} required />
-        <input type="file" name="logo" accept="image/*" onChange={handleChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
-        <div className="login-link">
-          <a href="/admin-login">Already an Admin? Login</a>
-        </div>
-      </form>
+    <div className="register-page">
+      <div className="register-form">
+        <h2>Admin Registration</h2>
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="instituteName" placeholder="Institute Name" onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Admin Email" onChange={handleChange} required />
+          <input type="file" name="logo" accept="image/*" onChange={handleChange} />
+          <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required />
+          <button type="submit">Register</button>
+          <div className="register-footer">
+            <div className="login-link">
+              <a href="/admin-login">Already an Admin? Login</a>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

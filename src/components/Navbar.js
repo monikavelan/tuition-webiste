@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import '../styles/navbar.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logoIcon from '../assets/video-tutorials.png';
 import { FaTimes, FaBars } from 'react-icons/fa';
 
 const Navbar = () => {
-  const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleNavLinkClick = () => {
     setIsMobileMenuOpen(false);
-    setShowRegisterDropdown(false);
   };
 
   const handleLogout = () => {
@@ -46,39 +44,52 @@ const Navbar = () => {
       <div
         className="hamburger"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        role="button"
+        aria-label="Toggle navigation menu"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }
+        }}
       >
         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
-{/* 
-      <ul className={nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}}> */}
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
 
-        <li><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
-        <li><Link to={getDashboardLink()} onClick={handleNavLinkClick}>Dashboard</Link></li>
-        <li><Link to="/explore-more" onClick={handleNavLinkClick}>Explore More</Link></li>
+        <li><NavLink to="/" onClick={handleNavLinkClick}>Home</NavLink></li>
+        {isLoggedIn && (
+          <>
+            <li><NavLink to={getDashboardLink()} onClick={handleNavLinkClick}>Dashboard</NavLink></li>
+            <li><NavLink to="/explore-more" onClick={handleNavLinkClick}>Explore More</NavLink></li>
+          </>
+        )}
 
         {!isLoggedIn && (
-          <li><Link to="/login" onClick={handleNavLinkClick}>Login</Link></li>
+          <li><NavLink to="/login" onClick={handleNavLinkClick}>Login</NavLink></li>
         )}
 
         {!isLoggedIn && (
           <li
             className="register-dropdown"
-            onMouseEnter={() => setShowRegisterDropdown(true)}
-            onMouseLeave={() => !isMobileMenuOpen && setShowRegisterDropdown(false)}
           >
             <span
               className="register-link"
-              onClick={() => setShowRegisterDropdown(!showRegisterDropdown)}
             >
-              Register ▾
+              Register
             </span>
 
-            {(showRegisterDropdown || isMobileMenuOpen) && (
+            {isMobileMenuOpen ? (
               <ul className="dropdown-menu">
-                <li><Link to="/register/student" onClick={handleNavLinkClick}>Student</Link></li>
-                <li><Link to="/register/teacher" onClick={handleNavLinkClick}>Teacher</Link></li>
-                <li><Link to="/admin-register" onClick={handleNavLinkClick}>Admin</Link></li>
+                <li><NavLink to="/admin-register" onClick={handleNavLinkClick}>Admin</NavLink></li>
+                <li><NavLink to="/register/teacher" onClick={handleNavLinkClick}>Teacher</NavLink></li>
+                <li><NavLink to="/register/student" onClick={handleNavLinkClick}>Student</NavLink></li>
+              </ul>
+            ) : (
+              <ul className="dropdown-menu">
+                <li><NavLink to="/admin-register" onClick={handleNavLinkClick}>Admin</NavLink></li>
+                <li><NavLink to="/register/teacher" onClick={handleNavLinkClick}>Teacher</NavLink></li>
+                <li><NavLink to="/register/student" onClick={handleNavLinkClick}>Student</NavLink></li>
               </ul>
             )}
           </li>

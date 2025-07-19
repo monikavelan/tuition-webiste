@@ -1,10 +1,20 @@
-# Getting Started with Create React App
+# Online Tuition Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive online tuition platform built with React.js that connects students with expert tutors for personalized learning experiences.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Multi-Role Authentication**: Student, Teacher, and Admin dashboards
+- **Subject Management**: Comprehensive subject catalog with expert tutors
+- **Live & Recorded Classes**: Interactive learning sessions
+- **Assignment Management**: Create, assign, and track student progress
+- **Attendance Tracking**: Monitor student participation
+- **Query System**: Direct communication between students and teachers
+- **Payment Management**: Handle tuition fees and payments
+- **Mobile Responsive**: Works seamlessly on all devices
+- **Error Handling**: Comprehensive error boundaries and user feedback
+
+## 📝 Project Details
 
 ### `npm start`
 

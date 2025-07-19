@@ -28,8 +28,9 @@ const TeacherRegister = () => {
   };
 
   return (
-    <div className="register-form">
-      <h2>Register as Teacher</h2>
+    <div className="register-page">
+      <div className="register-form">
+        <h2>Register as Teacher</h2>
       <form onSubmit={handleSubmit}>
         <div className="name-fields">
           <input
@@ -94,10 +95,13 @@ const TeacherRegister = () => {
           required
         />
         <button type="submit">Register</button>
-        <div className="login-link">
-          <a href="/login">Already a User? Continue Here</a>
+        <div className="register-footer">
+          <div className="login-link">
+            <a href="/login">Already a User? Continue Here</a>
+          </div>
         </div>
       </form>
+      </div>
     </div>
   );
 };
