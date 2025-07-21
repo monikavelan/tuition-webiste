@@ -78,7 +78,6 @@ const ManagePayments = () => {
   const [payments, setPayments] = useState(initialPayments);
   const [filterStatus, setFilterStatus] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [showAddPayment, setShowAddPayment] = useState(false);
 
   const filteredPayments = payments.filter(payment => {
     const matchesStatus = filterStatus === 'All' || payment.status === filterStatus;
@@ -174,15 +173,6 @@ const ManagePayments = () => {
             <p>{overdueCount}</p>
           </div>
         </div>
-        <div className="stat-card total">
-          <div className="stat-icon">
-            <span className="icon-text">STUDENTS</span>
-          </div>
-          <div className="stat-content">
-            <h3>Total Students</h3>
-            <p>{payments.length}</p>
-          </div>
-        </div>
       </div>
 
       {/* Filters and Actions */}
@@ -209,9 +199,6 @@ const ManagePayments = () => {
         <div className="action-buttons">
           <button className="export-btn" onClick={exportPayments}>
             Export Data
-          </button>
-          <button className="add-payment-btn" onClick={() => setShowAddPayment(true)}>
-            Add Payment
           </button>
         </div>
       </div>

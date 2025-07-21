@@ -1,20 +1,32 @@
 .subjects-wrapper {
   padding: 30px 4%;
-  background-color: #f9f9ff;
+  max-width: 100%;
+  width: 100%;
 }
 
 .subjects-title {
   text-align: center;
   font-size: 2.2rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #ff857A;
   font-weight: bold;
 }
 
+.subjects-wrapper .description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  font-weight: normal;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  justify-items: center;
+  align-items: start;
 }
 
 .subject-card {
@@ -24,6 +36,8 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
   background: #fff;
+  width: 100%;
+  max-width: 300px;
 }
 
 .subject-card:hover {
@@ -103,9 +117,50 @@
 }
 
 /* ========== RESPONSIVE BREAKPOINTS ========== */
+@media (max-width: 1400px) {
+  .subjects-grid {
+    gap: 15px;
+  }
+  
+  .subject-card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .subjects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .subject-card {
+    max-width: 260px;
+  }
+  
+  .subject-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .subject-card {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .subjects-title {
     font-size: 1.9rem;
+  }
+  
+  .subjects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .subject-card img {
@@ -147,5 +202,35 @@
   .details-btn {
     font-size: 11.5px;
     padding: 4px 8px;
+  }
+}
+
+/* Sidebar responsive adjustments */
+@media (min-width: 769px) {
+  /* When sidebar is open, ensure proper spacing */
+  .main-content.sidebar-open .subjects-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .main-content.sidebar-open .subjects-grid {
+    gap: 18px;
+  }
+  
+  .main-content.sidebar-open .subject-card {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-content.sidebar-open .subjects-wrapper {
+    padding: 30px 25px;
+  }
+  
+  .main-content.sidebar-open .subjects-grid {
+    gap: 20px;
+  }
+  
+  .main-content.sidebar-open .subject-card {
+    max-width: 300px;
   }
 }

@@ -51,6 +51,7 @@ const Assignments = () => {
   return (
     <div className="assignment-page">
       <h2>My Assignments</h2>
+      <p className="description">Track and submit your assignments here</p>
       <div className="assignment-list">
         {assignments.map((item, idx) => (
           <div className="assignment-card" key={idx}>

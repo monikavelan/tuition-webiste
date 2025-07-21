@@ -51,6 +51,7 @@ const StudentQueries = () => {
   return (
     <div className="query-page">
       <h2>Student Queries</h2>
+      <p className="description">View and respond to student questions and doubts</p>
       <div className="query-list">
         {queries.map((q) => (
           <div className="query-card" key={q.id}>

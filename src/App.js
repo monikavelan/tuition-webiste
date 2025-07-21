@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Subjects from './pages/Subjects';
@@ -7,6 +7,7 @@ import StudentRegister from './pages/StudentRegister';
 import TeacherRegister from './pages/TeacherRegister';
 import Classroom from './pages/Classroom';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import TeacherDetails from './pages/TeacherDetails';
 import AdminRegister from './pages/AdminRegister';
 import AdminDashboard from './pages/AdminDashboard';
@@ -24,17 +25,65 @@ import ManagePayments from './pages/ManagePayments';
 import ManageSubjects from './pages/ManageSubjects';
 import FeePayment from './pages/FeePayment';
 import PaymentHistory from './pages/PaymentHistory';
+import Payments from './pages/Payments';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './styles/layout.css';
 
-function App() {
+const AppContent = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const location = useLocation();
+  const userRole = localStorage.getItem('userRole');
+  const isLoggedIn = !!userRole;
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile && isLoggedIn) {
+        setSidebarOpen(true);
+      } else if (mobile) {
+        setSidebarOpen(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isLoggedIn]);
+
+  // Close sidebar on mobile when route changes
+  useEffect(() => {
+    if (isMobile) {
+      setSidebarOpen(false);
+    }
+  }, [location.pathname, isMobile]);
+
+  const getMainContentClass = () => {
+    if (!isLoggedIn) return 'main-content';
+    if (isMobile) return 'main-content';
+    return `main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-collapsed'}`;
+  };
+
   return (
-    <ErrorBoundary>
-      <Router>
-        <Navbar />
+    <>
+      <Navbar 
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        isMobile={isMobile}
+      />
+      {isLoggedIn && (
+        <Sidebar 
+          isOpen={sidebarOpen}
+          setIsOpen={setSidebarOpen}
+          isMobile={isMobile}
+        />
+      )}
+      <main className={getMainContentClass()}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -57,10 +106,21 @@ function App() {
           <Route path="/manage-teachers" element={<ManageTeachers />} />
           <Route path="/manage-payments" element={<ManagePayments />} />
           <Route path="/manage-subjects" element={<ManageSubjects />} />
+          <Route path="/payments" element={<Payments />} />
           <Route path="/fee-payment" element={<FeePayment />} />
           <Route path="/payment-history" element={<PaymentHistory />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+      </main>
+    </>
+  );
+};
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <Router>
+        <AppContent />
       </Router>
     </ErrorBoundary>
   );

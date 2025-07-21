@@ -18,7 +18,7 @@ const TeacherDetails = () => {
   return (
     <div className="teacher-details-container">
       <h2 className='teacher-heading'>{subjectName} - Available Tutors</h2>
-      <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
+      <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
 
       <div className="teacher-list">
         {teachers.map((teacher, idx) => (

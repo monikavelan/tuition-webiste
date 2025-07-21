@@ -6,10 +6,20 @@
 }
 
 .assignment-page h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #ff857A;
+  font-weight: bold;
   text-align: center;
+}
+
+.assignment-page .description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  font-weight: normal;
+  margin-bottom: 25px;
+  padding: 0 10px;
 }
 
 .assignment-list {

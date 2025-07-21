@@ -1,7 +1,8 @@
 /* Base Styles */
 .extra-classes-page {
   padding: 30px 15px;
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: auto;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
@@ -10,9 +11,10 @@
 }
 
 .extra-classes-page h2 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  color: #ff857A;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .extra-subject-card {
   position: relative;
@@ -32,24 +34,27 @@
 
 
 .extra-classes-page .description {
-  color: #666;
-  font-size: 1rem;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  font-weight: normal;
   margin-bottom: 25px;
   padding: 0 10px;
+  text-align: center;
 }
 
 .extra-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: start;
 }
 
 /* Card styling */
 .extra-subject-card {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   height: 420px;
   background-color: #fff;
   border-radius: 12px;
@@ -168,7 +173,74 @@
   }
 }
 
+/* Sidebar responsive adjustments */
+@media (min-width: 769px) {
+  /* When sidebar is open, ensure proper spacing */
+  .main-content.sidebar-open .extra-classes-page {
+    padding: 30px 20px;
+  }
+  
+  .main-content.sidebar-open .extra-grid {
+    gap: 18px;
+  }
+  
+  .main-content.sidebar-open .extra-subject-card {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-content.sidebar-open .extra-classes-page {
+    padding: 30px 25px;
+  }
+  
+  .main-content.sidebar-open .extra-grid {
+    gap: 20px;
+  }
+  
+  .main-content.sidebar-open .extra-subject-card {
+    max-width: 300px;
+  }
+}
+
 /* Responsive */
+@media (max-width: 1400px) {
+  .extra-grid {
+    gap: 15px;
+  }
+  
+  .extra-subject-card {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .extra-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .extra-subject-card {
+    max-width: 260px;
+    height: 380px;
+  }
+  
+  .extra-img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .extra-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .extra-subject-card {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .extra-classes-page {
     padding: 20px 10px;
@@ -176,6 +248,11 @@
 
   .extra-classes-page h2 {
     font-size: 1.5rem;
+  }
+
+  .extra-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .extra-subject-card {

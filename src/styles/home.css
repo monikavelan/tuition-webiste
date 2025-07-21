@@ -399,7 +399,7 @@
   margin-top: 48px;
 }
 
-.stat-item {
+.home-stat-item {
   text-align: center;
   background: white;
   padding: 32px 24px;
@@ -409,7 +409,7 @@
   border: 1px solid #e2e8f0;
 }
 
-.stat-item:hover {
+.home-stat-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
@@ -420,7 +420,7 @@
   margin-bottom: 16px;
 }
 
-.stat-number {
+.home-stat-number {
   display: block;
   font-size: 2.25rem;
   font-weight: 700;
@@ -428,7 +428,7 @@
   margin-bottom: 8px;
 }
 
-.stat-label {
+.home-stat-label {
   font-size: 1rem;
   font-weight: 500;
   color: #64748b;
@@ -756,7 +756,7 @@
     gap: 24px;
   }
   
-  .stat-item {
+  .home-stat-item {
     padding: 24px 20px;
   }
 }

@@ -52,13 +52,13 @@ const Home = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex(prev => (prev === 0 ? heroImages.length - 1 : prev - 1));
-  }, [isTransitioning, heroImages.length]);
+  }, [isTransitioning]);
 
   const handleNext = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex(prev => (prev === heroImages.length - 1 ? 0 : prev + 1));
-  }, [isTransitioning, heroImages.length]);
+  }, [isTransitioning]);
 
   useEffect(() => {
     // Only start the timer if search is not focused
@@ -154,17 +154,17 @@ const Home = () => {
               we provide the tools, support, and inspiration to turn your academic dreams into reality.
             </p>
             <div className="stats-container">
-              <div className="stat-item">
-                <span className="stat-number">10,000+</span>
-                <span className="stat-label">Happy Students</span>
+              <div className="home-stat-item">
+                <span className="home-stat-number">10,000+</span>
+                <span className="home-stat-label">Happy Students</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Expert Tutors</span>
+              <div className="home-stat-item">
+                <span className="home-stat-number">500+</span>
+                <span className="home-stat-label">Expert Tutors</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">95%</span>
-                <span className="stat-label">Success Rate</span>
+              <div className="home-stat-item">
+                <span className="home-stat-number">95%</span>
+                <span className="home-stat-label">Success Rate</span>
               </div>
             </div>
           </div>

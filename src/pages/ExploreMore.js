@@ -20,7 +20,7 @@ const extraCourses = [
 const ExtraClasses = () => {
   return (
     <div className="extra-classes-page">
-      <h2>🎓 Explore Extra Classes</h2>
+      <h2>Explore Extra Classes</h2>
       <p className="description">These are optional add-on classes you can unlock anytime!</p>
       <div className="extra-grid">
         {extraCourses.map((item, index) => (

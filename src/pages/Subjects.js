@@ -67,6 +67,7 @@ const Subjects = () => {
   return (
     <div className="subjects-wrapper">
       <h2 className="subjects-title">Subjects</h2>
+      <p className="description">Choose from our comprehensive range of subjects with expert teachers</p>
       <div className="subjects-grid">
         {subjects.map((subject, idx) => (
           <div className="subject-card" key={idx}>
